@@ -1,8 +1,8 @@
 <?php 
 
-require_once './Controller/EstudanteController.php';
+require_once './Controller/CopaController.php';
 
-$app = new EstudanteController();
+$app = new CopaController();
 
 $action = $_GET['action'] ?? '';
 $id = $_GET['id'] ?? null;

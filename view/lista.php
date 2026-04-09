@@ -3,25 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de Alunos - Sistema Escolar </title>
+    <title>Copa do Mundo</title>
 </head>
 <body>
-    <h1>Alunos Matriculados</h1>
-    <p> <a href="index.php?action=novo"> + Cadastrar Novo Aluno</a></p>
+    <h1>Seleções Participantes</h1>
+    <p> <a href="index.php?action=novo"> + Cadastrar Nova Seleção</a></p>
     <table border="1">
         <thead>
             <tr>
                 <th>Nome</th>
-                <th>E-mail</th>
-                <th>Matrícula</th>
+                <th>Cidade</th>
+                <th>País</th>
             </tr>
         </thead> 
         <tbody>
-            <?php foreach ($alunos as $aluno): ?>
+            <?php foreach ($selecoes as $selecao): ?>
             <tr>
-                <td><?= htmlspecialchars($aluno['nome']) ?></td>
-                <td><?= htmlspecialchars($aluno['email']) ?></td>
-                <td><?= htmlspecialchars($aluno['matricula']) ?></td>
+                <td><?= htmlspecialchars($selecao['nome']) ?></td>
+                <td><?= htmlspecialchars($selecao['Cidade']) ?></td>
+                <td><?= htmlspecialchars($selecao['País']) ?></td>
             </tr>
             <?php endforeach; ?>
         </tbody>
