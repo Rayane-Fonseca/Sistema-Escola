@@ -2,7 +2,7 @@
 
 class Database {
     private $host = "localhost";
-    private $db_name = "sistema_copa";
+    private $db_name = "sistema_escola";
     private $user = "root";
     private $password = "alunolab";
     public $conn;

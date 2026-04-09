@@ -62,32 +62,32 @@ class EstudanteController {
     }
 
     public function editar($id){
-        $aluno = $this -> estudante->buscarPorId($id);
-        if ($aluno) {
-            require_once './View/editar.php';
+        $aluno = $this->estudante->buscarPorId($id);
+        if($aluno){
+            require_once  './View/editar.php';                                                                                                                                                                                                                                                                                                                                                                                                                                                       
         } else {
-            header("Location: index.php?status=err&msg=Aluno não encontrado");
+            header("Location: index.php?status=erro&msg=Aluno não encontrado");
         }
     }
 
     public function atualizarDados(){
-        if ($_SERVER['REQUEST_METHOD'] === 'POST'){
+        if($_SERVER['REQUEST_METHOD'] == 'POST'){
             $dados = [
-                'id' => (int) $_POST['id'],
+                'id' =>(int)$_POST['id'],
                 'nome' => htmlspecialchars(trim($_POST['nome']), ENT_QUOTES, 'UTF-8'),
                 'email' => htmlspecialchars(trim($_POST['email']), ENT_QUOTES, 'UTF-8'),
                 'matricula' => htmlspecialchars(trim($_POST['matricula']), ENT_QUOTES, 'UTF-8'),
             ];
 
-            if ($this->estudante->atualizarDados($dados)){
+            if($this->estudante->atualizarDados($dados)){
                 header("Location: index.php?status=sucesso&msg=Atualizado!");
             }
         }
     }
 
-    public function deletar($id) {
-        if ($this -> estudante-> deletar($id)) {
-            header("Location: index.php?status=sucesso&msg=Excluído!");
+    public function deletar($id){
+        if ($this->estudante->deletar($id)){
+            header("Location: index.php?status=sucesso&msg=Excluido!");
         }
     }
 }
